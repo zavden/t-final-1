@@ -1,0 +1,256 @@
+//- include /modules/pug/functions/functions
+-
+    let title = undefined,
+        codepen_user = "zavden"
+mixin codepen(index,height_window=310,user=codepen_user)
+    -let url = codepen_list[index-1]
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${index}`
+    p(class="codepen" data-height=`${height_window}` 
+      data-theme-id="default" data-default-tab="css,result" 
+      data-user=user data-slug-hash=`${url}` 
+      style=`height: ${height_window}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;`)
+
+
+mixin codepen_iframe(url, height=400, user=codepen_user)
+    iframe(height=`${height}` style="width: 100%;" scrolling="no" src=`https://codepen.io/${user}/embed/${url}?default-tab=result` frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true") See the Pen
+
+mixin codepen_url(url,text="",height_window=310,user=codepen_user,editable="true")
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${text}`
+    p(class="codepen" data-height=`${height_window}` 
+      data-theme-id="default" data-default-tab="css,result" 
+      data-user=user data-slug-hash=`${url}` 
+      style=`height: ${height_window}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;`)
+mixin ejercicios(url,nombre="",explicacion="")
+    .ejercicio #[a(href=`ejercicios/ejercicios-${url}.html` class="link-ejercicios")=`Ejercicio ${url}`]#[span=` - ${nombre}`] 
+        p=`${explicacion}`
+mixin new_style(url)
+    link(rel="stylesheet" href=url)
+mixin new_script(url)
+    script(src=url)
+mixin menu_nav(...arr_ejercicios)
+    each ej in arr_ejercicios
+        if ej == nej
+            if title === undefined
+                a(href=`ejercicios-${ej}.html`).remark-ej=`Ej-${ej}`
+            else
+                a(href=`ejercicios-${ej}.html`).remark-ej=`${title}`
+        else
+            if title === undefined
+                a(href=`ejercicios-${ej}.html`)=`Ej-${ej}`
+            else
+                a(href=`ejercicios-${ej}.html`)=`${title}`
+mixin menu_nav_index(...arr_ejercicios)
+    each ej in arr_ejercicios
+        if ej == nej
+            if title === undefined
+                a(href=`ejercicios/ejercicios-${ej}.html`).remark-ej=`Ej-${ej}`
+            else
+                a(href=`ejercicios/ejercicios-${ej}.html`).remark-ej=`${title}`
+        else
+            if title === undefined
+                a(href=`ejercicios/ejercicios-${ej}.html`)=`Ej-${ej}`
+            else
+                a(href=`ejercicios/ejercicios-${ej}.html`)=`${title}`
+mixin html_emb_ej(name,padding="300px")
+    .embed-container(style=`padding-bottom: ${padding};`).html-resize
+        iframe.html-resize(src=`../ejemplos/${name}/` frameborder="0" allowfullscreen)
+mixin html_emb(name,padding="300px")
+    .embed-container(style=`padding-bottom: ${padding};`).html-resize
+        iframe.html-resize(src=name frameborder="0" allowfullscreen)
+mixin img(src)
+    img(src=`./static/${src}` style=`width: 100%`)
+mixin img_path(src)
+    img(src=`${src}` style=`width: 100%`)
+mixin img_e(src)
+    img(src=`../static/${src}` style=`width: 100%`)
+mixin md_emb(number,padding="1000px")
+    .embed-container(style=`padding-bottom: ${padding};`).html-resize
+        iframe.html-resize(src=`../markdown/md-${number}.html` frameborder="0" allowfullscreen)
+
+mixin codepen_live(index,height_window=310,user=codepen_user)
+    -let url = codepen_list[index-1]
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${index}`
+    p(class="codepen" data-height=`${height_window}` 
+      data-theme-id="default" data-default-tab="css,result" 
+      data-user=user data-slug-hash=`${url}` 
+      data-editable="true"
+      style=`height: ${height_window}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;`)
+mixin codepen_url_live(url,text="",height_window=310,user=codepen_user,editable="true")
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${text}`
+    p(class="codepen" data-height=`${height_window}` 
+      data-editable="true"
+      data-theme-id="default" data-default-tab="css,result" 
+      data-user=user data-slug-hash=`${url}` 
+      style=`height: ${height_window}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;`)
+
+mixin tab_info(_id=0,...all_tabs)
+    .tab
+        each _tab in all_tabs
+            button(class="tablinks" onclick=`openTAB(event, "${_tab}-${_id}")`)=`${_tab}`
+
+mixin codepen_flex(url,text="",format="result",height_window=450,user=codepen_user)
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${text}`
+    .embed-container.ejercicio-flex(style=`padding-bottom: ${height_window}px;` id=url).html-resize
+        p(class="codepen" data-height=`${height_window}` 
+        data-theme-id="default" data-default-tab=format 
+        data-user=user data-slug-hash=`${url}`
+        style=`height: ${height_window}px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;`)
+    .change-vh-container
+        form
+            input(
+                type="checkbox" id=`${url}-v` name=`${url}-v`
+                value="vertical"
+            )
+            label(for=`${url}-v`) Vertical
+            input(
+                type="checkbox" id=`${url}-h` name=`${url}-h`
+                value="vertical"
+            )
+            label(for=`${url}-h`) Horizontal
+
+mixin codepen_flex_live(url,text="",format="result",height_window=450,user=codepen_user)
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${text} - live`
+    .embed-container.ejercicio-flex(style=`padding-bottom: ${height_window}px;` id=url).html-resize
+        iframe(
+            height=`${height}` style="width: 100%;" scrolling="no" title="CSS-A-2"
+            src=`https://codepen.io/${user}/embed/${url}?default-tab=result`
+            frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"
+        ) See the Pen
+    .change-vh-container
+        form
+            input(
+                type="checkbox" id=`${url}-v` name=`${url}-v`
+                value="vertical"
+            )
+            label(for=`${url}-v`) Vertical
+            input(
+                type="checkbox" id=`${url}-h` name=`${url}-h`
+                value="vertical"
+            )
+            label(for=`${url}-h`) Horizontal
+
+mixin code_html(num, ...blks)
+    .ejercicio
+        a(href=`../ejemplos/ej-${zeroPad(num,2)}/index.html` target="_blank").ejercicio-html=`Ejercicio ${num}`
+    +html_emb_ej(`ej-${num}`)
+    .tab-content
+        +tab_info(num, ...blks)
+
+mixin codepen_flex_all(url,format="html",height_window=450,user=codepen_user)
+    - codepen_count += 1
+    .ejercicio
+        a(href=`https://codepen.io/${user}/pen/${url}`)=`Ejercicio ${zeroPad(codepen_count,2)}`
+    .super-embed-container(id=`${url}-iframe-container`)
+        .embed-container.ejercicio-flex(style=`padding-bottom: ${height_window}px;` id=url).html-resize
+            iframe(
+            height=`${height}` style="width: 100%;" scrolling="no" id=`${url}-iframe`
+            src=`https://codepen.io/${user}/embed/${url}?default-tab=result`
+            frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"
+        ) See the Pen
+        .change-vh-container
+            form
+                p(style="display: inline-block") Width = 
+                    span(id=`${url}-width`).width-printer 0
+                p(style="display: inline-block") Height = 
+                    span(id=`${url}-height`).width-printer 0
+                input(
+                    type="checkbox" id=`${url}-v` name=`${url}-v`
+                    value="vertical"
+                )
+                label(for=`${url}-v`) Vertical
+                input(
+                    type="checkbox" id=`${url}-h` name=`${url}-h`
+                    value="vertical"
+                )
+                label(for=`${url}-h`) Horizontal
+    .embed-container.ejercicio-flex(style=`padding-bottom: ${height_window}px;` id=`${url}A`).html-resize
+        p(class="codepen" data-height=`${height_window}` 
+        data-theme-id="default" data-default-tab=format
+        data-user=user data-slug-hash=`${url}`
+        style=`height: ${height_window}px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; font-size=2em`)
+    .change-vh-container
+        form
+            input(
+                type="checkbox" id=`${url}A-v` name=`${url}A-v`
+                value="vertical"
+            )
+            label(for=`${url}A-v`) Vertical
+            input(
+                type="checkbox" id=`${url}A-h` name=`${url}A-h`
+                value="vertical"
+            )
+            label(for=`${url}A-h`) Horizontal
+
+mixin code_emb_html(name,padding="300px")
+    pre(id=`${name}-html`)
+        code.html-resize.embed-container(style=`padding-bottom: ${padding};` class=`language-html`).hljs.code-emb=`${name}`
+    script all_codes = document.querySelectorAll("#!{name}-html .language-html")
+    script.
+        for(let _i=0; _i<all_codes.length; _i++){
+            replace_all_codes(all_codes[_i], "index.html")
+        }
+
+mixin code_emb_css(name,padding="300px")
+    pre(id=`${name}-css`)
+        code.html-resize.embed-container(style=`padding-bottom: ${padding};` class=`language-css`).hljs.code-emb=`${name}`
+    script all_codes = document.querySelectorAll("#!{name}-css .language-css")
+    script.
+        for(let _i=0; _i<all_codes.length; _i++){
+            replace_all_codes(all_codes[_i], "styles.css")
+        }
+
+mixin code_emb_js(name,padding="300px")
+    pre(id=`${name}-javascript`)
+        code.html-resize.embed-container(style=`padding-bottom: ${padding};` class=`language-javascript`).hljs.code-emb=`${name}`
+    script all_codes = document.querySelectorAll("#!{name}-javascript .language-javascript")
+    script.
+        for(let _i=0; _i<all_codes.length; _i++){
+            replace_all_codes(all_codes[_i], "script.js")
+        }
+
+mixin code_emb_source(name, padding="300px", padding_code="400px")
+    - code_count += 1
+    .ejercicio
+        a(href=`../ejemplos/${name}/index.html` target="_blank").ejercicio-html=`Ejercicio - ${name.slice(3)}`
+    .embed-container(style=`padding-bottom: ${padding};`).html-resize
+        iframe(src=`../ejemplos/${name}/` frameborder="0" allowfullscreen)
+    .tab-content
+        +tab_info(code_count, "HTML-S", "CSS-S", "JS-S")
+        .tabcontent(id=`HTML-S-${code_count}`)
+            +code_emb_html(name, padding=padding_code)
+        .tabcontent(id=`CSS-S-${code_count}`)
+            +code_emb_css(name, padding=padding_code)
+        .tabcontent(id=`JS-S-${code_count}`)
+            +code_emb_js(name, padding=padding_code)
+
+
+mixin code_emb_source_u(name, padding="300px", padding_code="400px")
+    - code_count += 1
+    .ejercicio
+        a(href=`../ejemplos/${name}/index.html` target="_blank").ejercicio-html=`Ejercicio iframe - ${name.slice(3)}`
+    .iframe-container(id=`${name}-iframe-container`)
+        .numbers-container(style="margin-bottom: -20px")
+            p(style="display: inline-block") Width = 
+                span(id=`${name}-width`).width-printer 0
+            p(style="display: inline-block") ; Height = 
+                span(id=`${name}-height`).width-printer 0
+        .embed-container(style=`padding-bottom: ${padding};`).html-resize
+            iframe(src=`../ejemplos/${name}/` frameborder="0" allowfullscreen id=`${name}-iframe`)
+        .tab-content
+            +tab_info(code_count, "HTML-S", "CSS-S", "JS-S")
+            .tabcontent(id=`HTML-S-${code_count}`)
+                +code_emb_html(name, padding=padding_code)
+            .tabcontent(id=`CSS-S-${code_count}`)
+                +code_emb_css(name, padding=padding_code)
+            .tabcontent(id=`JS-S-${code_count}`)
+                +code_emb_js(name, padding=padding_code)
+
+
+
+

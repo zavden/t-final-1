@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo 1</title>
+    <meta cjarset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="../prism/prism.css">
+    <link rel="icon" href="../favicon.ico">
+    <script src="../static/hl.js"></script>
+    <script>
+      const getSourceCode = async(name, _file) => {
+          const response = await fetch(`../ejemplos/${name}/${_file}`);
+          const _html    = await response.text();
+          return _html
+      }
+      const replace_all_codes = async (e, _file) => {
+          let _name = e.innerText;
+          let _html = await getSourceCode(_name, _file);
+          let code = hljs.highlightAuto(_html).value;
+          e.innerHTML = code
+      }
+      let all_codes;
+    </script>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1 id="titulo">Ejemplo 1</h1>
+      <div class="menu-nav"><a href="../index.html">Index</a><a class="remark-ej" href="ejercicios-01.html">Ej-01</a><a href="ejercicios-02.html">Ej-02</a><a href="ejercicios-03.html">Ej-03</a><a href="ejercicios-04.html">Ej-04</a>
+      </div><code class="header" style="text-align:center; display:block"><a href="#downer"></a></code>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/BaybRKr">Ejercicio 01</a></div>
+      <div class="super-embed-container" id="BaybRKr-iframe-container">
+        <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKr">
+          <iframe height="undefined" style="width: 100%;" scrolling="no" id="BaybRKr-iframe" src="https://codepen.io/zavden/embed/BaybRKr?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen</iframe>
+        </div>
+        <div class="change-vh-container">
+          <form>
+            <p style="display: inline-block">Width = <span class="width-printer" id="BaybRKr-width">0</span></p>
+            <p style="display: inline-block">Height = <span class="width-printer" id="BaybRKr-height">0</span></p>
+            <input type="checkbox" id="BaybRKr-v" name="BaybRKr-v" value="vertical"/>
+            <label for="BaybRKr-v">Vertical</label>
+            <input type="checkbox" id="BaybRKr-h" name="BaybRKr-h" value="vertical"/>
+            <label for="BaybRKr-h">Horizontal</label>
+          </form>
+        </div>
+      </div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKrA">
+        <p class="codepen" data-height="450" data-theme-id="default" data-default-tab="html" data-user="zavden" data-slug-hash="BaybRKr" style="height: 450px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; font-size=2em"></p>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="BaybRKrA-v" name="BaybRKrA-v" value="vertical"/>
+          <label for="BaybRKrA-v">Vertical</label>
+          <input type="checkbox" id="BaybRKrA-h" name="BaybRKrA-h" value="vertical"/>
+          <label for="BaybRKrA-h">Horizontal</label>
+        </form>
+      </div>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/vYEPxPX">Ejercicio 02</a></div>
+      <div class="super-embed-container" id="vYEPxPX-iframe-container">
+        <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="vYEPxPX">
+          <iframe height="undefined" style="width: 100%;" scrolling="no" id="vYEPxPX-iframe" src="https://codepen.io/zavden/embed/vYEPxPX?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen</iframe>
+        </div>
+        <div class="change-vh-container">
+          <form>
+            <p style="display: inline-block">Width = <span class="width-printer" id="vYEPxPX-width">0</span></p>
+            <p style="display: inline-block">Height = <span class="width-printer" id="vYEPxPX-height">0</span></p>
+            <input type="checkbox" id="vYEPxPX-v" name="vYEPxPX-v" value="vertical"/>
+            <label for="vYEPxPX-v">Vertical</label>
+            <input type="checkbox" id="vYEPxPX-h" name="vYEPxPX-h" value="vertical"/>
+            <label for="vYEPxPX-h">Horizontal</label>
+          </form>
+        </div>
+      </div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="vYEPxPXA">
+        <p class="codepen" data-height="450" data-theme-id="default" data-default-tab="html" data-user="zavden" data-slug-hash="vYEPxPX" style="height: 450px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; font-size=2em"></p>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="vYEPxPXA-v" name="vYEPxPXA-v" value="vertical"/>
+          <label for="vYEPxPXA-v">Vertical</label>
+          <input type="checkbox" id="vYEPxPXA-h" name="vYEPxPXA-h" value="vertical"/>
+          <label for="vYEPxPXA-h">Horizontal</label>
+        </form>
+      </div>
+      <hr>
+      <div class="ejercicio"><a class="ejercicio-html" href="../ejemplos/ej-01/index.html" target="_blank">Ejercicio iframe - 01</a></div>
+      <div class="iframe-container" id="ej-01-iframe-container">
+        <div class="numbers-container" style="margin-bottom: -20px">
+          <p style="display: inline-block">Width = <span class="width-printer" id="ej-01-width">0</span></p>
+          <p style="display: inline-block">; Height = <span class="width-printer" id="ej-01-height">0</span></p>
+        </div>
+        <div class="embed-container html-resize" style="padding-bottom: 300px;">
+          <iframe src="../ejemplos/ej-01/" frameborder="0" allowfullscreen="allowfullscreen" id="ej-01-iframe"></iframe>
+        </div>
+        <div class="tab-content">
+          <div class="tab">
+            <button class="tablinks" onclick="openTAB(event, &quot;HTML-S-1&quot;)">HTML-S</button>
+            <button class="tablinks" onclick="openTAB(event, &quot;CSS-S-1&quot;)">CSS-S</button>
+            <button class="tablinks" onclick="openTAB(event, &quot;JS-S-1&quot;)">JS-S</button>
+          </div>
+          <div class="tabcontent" id="HTML-S-1">
+            <pre id="ej-01-html"><code class="html-resize embed-container language-html hljs code-emb" style="padding-bottom: 400px;">ej-01</code></pre>
+            <script>all_codes = document.querySelectorAll("#ej-01-html .language-html")</script>
+            <script>
+              for(let _i=0; _i<all_codes.length; _i++){
+                  replace_all_codes(all_codes[_i], "index.html")
+              }
+              
+            </script>
+          </div>
+          <div class="tabcontent" id="CSS-S-1">
+            <pre id="ej-01-css"><code class="html-resize embed-container language-css hljs code-emb" style="padding-bottom: 400px;">ej-01</code></pre>
+            <script>all_codes = document.querySelectorAll("#ej-01-css .language-css")</script>
+            <script>
+              for(let _i=0; _i<all_codes.length; _i++){
+                  replace_all_codes(all_codes[_i], "styles.css")
+              }
+              
+            </script>
+          </div>
+          <div class="tabcontent" id="JS-S-1">
+            <pre id="ej-01-javascript"><code class="html-resize embed-container language-javascript hljs code-emb" style="padding-bottom: 400px;">ej-01</code></pre>
+            <script>all_codes = document.querySelectorAll("#ej-01-javascript .language-javascript")</script>
+            <script>
+              for(let _i=0; _i<all_codes.length; _i++){
+                  replace_all_codes(all_codes[_i], "script.js")
+              }
+              
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="ejercicio"><a class="ejercicio-html" href="../ejemplos/ej-02/index.html" target="_blank">Ejercicio iframe - 02</a></div>
+      <div class="iframe-container" id="ej-02-iframe-container">
+        <div class="numbers-container" style="margin-bottom: -20px">
+          <p style="display: inline-block">Width = <span class="width-printer" id="ej-02-width">0</span></p>
+          <p style="display: inline-block">; Height = <span class="width-printer" id="ej-02-height">0</span></p>
+        </div>
+        <div class="embed-container html-resize" style="padding-bottom: 300px;">
+          <iframe src="../ejemplos/ej-02/" frameborder="0" allowfullscreen="allowfullscreen" id="ej-02-iframe"></iframe>
+        </div>
+        <div class="tab-content">
+          <div class="tab">
+            <button class="tablinks" onclick="openTAB(event, &quot;HTML-S-2&quot;)">HTML-S</button>
+            <button class="tablinks" onclick="openTAB(event, &quot;CSS-S-2&quot;)">CSS-S</button>
+            <button class="tablinks" onclick="openTAB(event, &quot;JS-S-2&quot;)">JS-S</button>
+          </div>
+          <div class="tabcontent" id="HTML-S-2">
+            <pre id="ej-02-html"><code class="html-resize embed-container language-html hljs code-emb" style="padding-bottom: 400px;">ej-02</code></pre>
+            <script>all_codes = document.querySelectorAll("#ej-02-html .language-html")</script>
+            <script>
+              for(let _i=0; _i<all_codes.length; _i++){
+                  replace_all_codes(all_codes[_i], "index.html")
+              }
+              
+            </script>
+          </div>
+          <div class="tabcontent" id="CSS-S-2">
+            <pre id="ej-02-css"><code class="html-resize embed-container language-css hljs code-emb" style="padding-bottom: 400px;">ej-02</code></pre>
+            <script>all_codes = document.querySelectorAll("#ej-02-css .language-css")</script>
+            <script>
+              for(let _i=0; _i<all_codes.length; _i++){
+                  replace_all_codes(all_codes[_i], "styles.css")
+              }
+              
+            </script>
+          </div>
+          <div class="tabcontent" id="JS-S-2">
+            <pre id="ej-02-javascript"><code class="html-resize embed-container language-javascript hljs code-emb" style="padding-bottom: 400px;">ej-02</code></pre>
+            <script>all_codes = document.querySelectorAll("#ej-02-javascript .language-javascript")</script>
+            <script>
+              for(let _i=0; _i<all_codes.length; _i++){
+                  replace_all_codes(all_codes[_i], "script.js")
+              }
+              
+            </script>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/BaybRKr">Ejercicio 03</a></div>
+      <div class="super-embed-container" id="BaybRKr-iframe-container">
+        <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKr">
+          <iframe height="undefined" style="width: 100%;" scrolling="no" id="BaybRKr-iframe" src="https://codepen.io/zavden/embed/BaybRKr?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen</iframe>
+        </div>
+        <div class="change-vh-container">
+          <form>
+            <p style="display: inline-block">Width = <span class="width-printer" id="BaybRKr-width">0</span></p>
+            <p style="display: inline-block">Height = <span class="width-printer" id="BaybRKr-height">0</span></p>
+            <input type="checkbox" id="BaybRKr-v" name="BaybRKr-v" value="vertical"/>
+            <label for="BaybRKr-v">Vertical</label>
+            <input type="checkbox" id="BaybRKr-h" name="BaybRKr-h" value="vertical"/>
+            <label for="BaybRKr-h">Horizontal</label>
+          </form>
+        </div>
+      </div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKrA">
+        <p class="codepen" data-height="450" data-theme-id="default" data-default-tab="1" data-user="zavden" data-slug-hash="BaybRKr" style="height: 450px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; font-size=2em"></p>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="BaybRKrA-v" name="BaybRKrA-v" value="vertical"/>
+          <label for="BaybRKrA-v">Vertical</label>
+          <input type="checkbox" id="BaybRKrA-h" name="BaybRKrA-h" value="vertical"/>
+          <label for="BaybRKrA-h">Horizontal</label>
+        </form>
+      </div>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/vYEPxPX">Ejercicio 04</a></div>
+      <div class="super-embed-container" id="vYEPxPX-iframe-container">
+        <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="vYEPxPX">
+          <iframe height="undefined" style="width: 100%;" scrolling="no" id="vYEPxPX-iframe" src="https://codepen.io/zavden/embed/vYEPxPX?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen</iframe>
+        </div>
+        <div class="change-vh-container">
+          <form>
+            <p style="display: inline-block">Width = <span class="width-printer" id="vYEPxPX-width">0</span></p>
+            <p style="display: inline-block">Height = <span class="width-printer" id="vYEPxPX-height">0</span></p>
+            <input type="checkbox" id="vYEPxPX-v" name="vYEPxPX-v" value="vertical"/>
+            <label for="vYEPxPX-v">Vertical</label>
+            <input type="checkbox" id="vYEPxPX-h" name="vYEPxPX-h" value="vertical"/>
+            <label for="vYEPxPX-h">Horizontal</label>
+          </form>
+        </div>
+      </div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="vYEPxPXA">
+        <p class="codepen" data-height="450" data-theme-id="default" data-default-tab="1" data-user="zavden" data-slug-hash="vYEPxPX" style="height: 450px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; font-size=2em"></p>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="vYEPxPXA-v" name="vYEPxPXA-v" value="vertical"/>
+          <label for="vYEPxPXA-v">Vertical</label>
+          <input type="checkbox" id="vYEPxPXA-h" name="vYEPxPXA-h" value="vertical"/>
+          <label for="vYEPxPXA-h">Horizontal</label>
+        </form>
+      </div>
+      <hr>
+      <hr>
+      <pre id="ej-01-html"><code class="html-resize embed-container language-html hljs code-emb" style="padding-bottom: 300px;">ej-01</code></pre>
+      <script>all_codes = document.querySelectorAll("#ej-01-html .language-html")</script>
+      <script>
+        for(let _i=0; _i<all_codes.length; _i++){
+            replace_all_codes(all_codes[_i], "index.html")
+        }
+        
+      </script>
+      <pre id="ej-01-css"><code class="html-resize embed-container language-css hljs code-emb" style="padding-bottom: 300px;">ej-01</code></pre>
+      <script>all_codes = document.querySelectorAll("#ej-01-css .language-css")</script>
+      <script>
+        for(let _i=0; _i<all_codes.length; _i++){
+            replace_all_codes(all_codes[_i], "styles.css")
+        }
+        
+      </script>
+      <pre id="ej-01-javascript"><code class="html-resize embed-container language-javascript hljs code-emb" style="padding-bottom: 300px;">ej-01</code></pre>
+      <script>all_codes = document.querySelectorAll("#ej-01-javascript .language-javascript")</script>
+      <script>
+        for(let _i=0; _i<all_codes.length; _i++){
+            replace_all_codes(all_codes[_i], "script.js")
+        }
+        
+      </script><br>
+      <div class="ejercicio"><a class="ejercicio-html" href="../ejemplos/ej-02/index.html" target="_blank">Ejercicio 02</a></div>
+      <div class="embed-container html-resize" style="padding-bottom: 300px;">
+        <iframe class="html-resize" src="../ejemplos/ej-02/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+      <div class="tab-content">
+        <div class="tab">
+          <button class="tablinks" onclick="openTAB(event, &quot;HTML-02&quot;)">HTML</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;CSS-02&quot;)">CSS</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;JS-02&quot;)">JS</button>
+        </div>
+      </div>
+      <div class="tabcontent" id="HTML-02">
+        <pre id="ej-02-html"><code class="html-resize embed-container language-html hljs code-emb" style="padding-bottom: 300px;">ej-02</code></pre>
+        <script>all_codes = document.querySelectorAll("#ej-02-html .language-html")</script>
+        <script>
+          for(let _i=0; _i<all_codes.length; _i++){
+              replace_all_codes(all_codes[_i], "index.html")
+          }
+          
+        </script>
+      </div>
+      <div class="tabcontent" id="CSS-02">
+        <pre id="ej-02-css"><code class="html-resize embed-container language-css hljs code-emb" style="padding-bottom: 300px;">ej-02</code></pre>
+        <script>all_codes = document.querySelectorAll("#ej-02-css .language-css")</script>
+        <script>
+          for(let _i=0; _i<all_codes.length; _i++){
+              replace_all_codes(all_codes[_i], "styles.css")
+          }
+          
+        </script>
+      </div>
+      <div class="tabcontent" id="JS-02">
+        <pre id="ej-02-javascript"><code class="html-resize embed-container language-javascript hljs code-emb" style="padding-bottom: 300px;">ej-02</code></pre>
+        <script>all_codes = document.querySelectorAll("#ej-02-javascript .language-javascript")</script>
+        <script>
+          for(let _i=0; _i<all_codes.length; _i++){
+              replace_all_codes(all_codes[_i], "script.js")
+          }
+          
+        </script>
+      </div><img src="../static/e1-1.png" style="width: 100%"/><p><img src="../static/e1-1.png" alt=""></p>
+
+      <div class="ejercicio"><a class="ejercicio-html" href="../ejemplos/ej-01/index.html" target="_blank">Ejercicio 01</a></div>
+      <div class="embed-container html-resize" style="padding-bottom: 300px;">
+        <iframe class="html-resize" src="../ejemplos/ej-01/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+      <div class="tab-content">
+        <div class="tab">
+          <button class="tablinks" onclick="openTAB(event, &quot;HTML-01&quot;)">HTML</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;CSS-01&quot;)">CSS</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;JS-01&quot;)">JS</button>
+        </div>
+      </div>
+      <div class="tabcontent" id="HTML-01"><pre><code class="language-html">&lt;p&gt;Hello world - 3&lt;/p&gt;
+</code></pre>
+
+      </div>
+      <div class="tabcontent" id="CSS-01"><pre><code class="language-css">p {
+    color: green;
+}
+</code></pre>
+
+      </div>
+      <div class="tabcontent" id="JS-01"><pre><code class="language-javascript">const d = p.querySelector(&quot;d&quot;);
+d.style.fontSize = &quot;2em&quot;;
+</code></pre>
+
+      </div>
+      <hr>
+      <hr>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/BaybRKr">Ejercicio 1</a></div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKr">
+        <p class="codepen" data-height="450" data-theme-id="default" data-default-tab="result" data-user="zavden" data-slug-hash="BaybRKr" style="height: 450px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"></p>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="BaybRKr-v" name="BaybRKr-v" value="vertical"/>
+          <label for="BaybRKr-v">Vertical</label>
+          <input type="checkbox" id="BaybRKr-h" name="BaybRKr-h" value="vertical"/>
+          <label for="BaybRKr-h">Horizontal</label>
+        </form>
+      </div>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/BaybRKr">Ejercicio 1 - live</a></div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKr">
+        <iframe height="undefined" style="width: 100%;" scrolling="no" title="CSS-A-2" src="https://codepen.io/zavden/embed/BaybRKr?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen</iframe>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="BaybRKr-v" name="BaybRKr-v" value="vertical"/>
+          <label for="BaybRKr-v">Vertical</label>
+          <input type="checkbox" id="BaybRKr-h" name="BaybRKr-h" value="vertical"/>
+          <label for="BaybRKr-h">Horizontal</label>
+        </form>
+      </div>
+      <div class="ejercicio"><a href="https://codepen.io/zavden/pen/BaybRKr">Ejercicio 05</a></div>
+      <div class="super-embed-container" id="BaybRKr-iframe-container">
+        <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKr">
+          <iframe height="undefined" style="width: 100%;" scrolling="no" id="BaybRKr-iframe" src="https://codepen.io/zavden/embed/BaybRKr?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen</iframe>
+        </div>
+        <div class="change-vh-container">
+          <form>
+            <p style="display: inline-block">Width = <span class="width-printer" id="BaybRKr-width">0</span></p>
+            <p style="display: inline-block">Height = <span class="width-printer" id="BaybRKr-height">0</span></p>
+            <input type="checkbox" id="BaybRKr-v" name="BaybRKr-v" value="vertical"/>
+            <label for="BaybRKr-v">Vertical</label>
+            <input type="checkbox" id="BaybRKr-h" name="BaybRKr-h" value="vertical"/>
+            <label for="BaybRKr-h">Horizontal</label>
+          </form>
+        </div>
+      </div>
+      <div class="embed-container ejercicio-flex html-resize" style="padding-bottom: 450px;" id="BaybRKrA">
+        <p class="codepen" data-height="450" data-theme-id="default" data-default-tab="1" data-user="zavden" data-slug-hash="BaybRKr" style="height: 450px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; font-size=2em"></p>
+      </div>
+      <div class="change-vh-container">
+        <form>
+          <input type="checkbox" id="BaybRKrA-v" name="BaybRKrA-v" value="vertical"/>
+          <label for="BaybRKrA-v">Vertical</label>
+          <input type="checkbox" id="BaybRKrA-h" name="BaybRKrA-h" value="vertical"/>
+          <label for="BaybRKrA-h">Horizontal</label>
+        </form>
+      </div>
+      <hr>
+      <div class="embed-container html-resize" style="padding-bottom: 300px;">
+        <iframe class="html-resize" src="../ejemplos/ej-01/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+      <div class="tab-content">
+        <div class="tab">
+          <button class="tablinks" onclick="openTAB(event, &quot;HTML-0&quot;)">HTML</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;CSS-0&quot;)">CSS</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;JS-0&quot;)">JS</button>
+        </div>
+        <div class="tabcontent" id="HTML-0"><pre><code class="language-html">&lt;p&gt;Hello world&lt;/p&gt;
+</code></pre>
+
+        </div>
+        <div class="tabcontent" id="CSS-0"><pre><code class="language-css">p {
+    color: red;
+}
+</code></pre>
+
+        </div>
+        <div class="tabcontent" id="JS-0"><pre><code class="language-javascript">const p = p.querySelector(&quot;p&quot;);
+p.style.fontSize = &quot;2em&quot;;
+</code></pre>
+
+        </div>
+      </div>
+      <hr>
+      <hr>
+      <div class="ejercicio"><a class="ejercicio-html" href="../ejemplos/ej-03/index.html" target="_blank">Ejercicio 03</a></div>
+      <div class="embed-container html-resize" style="padding-bottom: 300px;">
+        <iframe class="html-resize" src="../ejemplos/ej-03/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+      <div class="tab-content">
+        <div class="tab">
+          <button class="tablinks" onclick="openTAB(event, &quot;HTML-03&quot;)">HTML</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;CSS-03&quot;)">CSS</button>
+          <button class="tablinks" onclick="openTAB(event, &quot;JS-03&quot;)">JS</button>
+        </div>
+      </div>
+      <div class="tabcontent" id="HTML-03">
+        <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello world - 3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+      </div>
+      <div class="tabcontent" id="CSS-03">
+        <pre><code class="hljs"><span class="hljs-selector-class">.title</span> {
+    <span class="hljs-attribute">color</span>: red;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2em</span>;
+}
+
+</code></pre>
+      </div>
+      <div class="tabcontent" id="JS-03">
+        <pre><code class="hljs">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> subtitle = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"subtitle"</span>)
+    subtitle.style.color= <span class="hljs-string">"pink"</span>
+})()
+
+</code></pre>
+      </div>
+      <hr>
+      <div class="content-flex-code">
+        <pre style="display: block; width:100%"><code class="hljs" style="height: 100%"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> ABC <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+        <pre style="display: block; width:100%"><code class="hljs" style="height: 100%"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:target</span> {
+    <span class="hljs-attribute">color</span>: red;
+}</code></pre>
+      </div>
+      <hr><code class="header" style="text-align:center; display:block"><a href="#titulo"></a></code>
+      <div class="menu-nav" id="downer"><a href="../index.html">Index</a><a class="remark-ej" href="ejercicios-01.html">Ej-01</a><a href="ejercicios-02.html">Ej-02</a><a href="ejercicios-03.html">Ej-03</a><a href="ejercicios-04.html">Ej-04</a>
+      </div>
+    </div>
+    <script src="../scripts.js"></script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+          });
+      });
+    </script>
+    <script src="../prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+extends /modules/pug/blocks/ejercicios
+block pug_javascript
+    -
+        let titulo = "Ejemplo 4",
+            formato = ""
+        let codepen_list = [
+            "vYEPxPX",
+            "BaybRKr",
+        ]
+        nej = 4 // <== EXERCISE NUMBER - REPLACE IT
+block pug_styles
+    +new_style(`../styles.css`)
+block html_javascript
+    +new_script(`../scripts.js`)
+block pug_contenido
+    +code_emb_source_u("ej-04")
+    

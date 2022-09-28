@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo 2</title>
+    <meta cjarset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="../prism/prism.css">
+    <link rel="icon" href="../favicon.ico">
+    <script src="../static/hl.js"></script>
+    <script>
+      const getSourceCode = async(name, _file) => {
+          const response = await fetch(`../ejemplos/${name}/${_file}`);
+          const _html    = await response.text();
+          return _html
+      }
+      const replace_all_codes = async (e, _file) => {
+          let _name = e.innerText;
+          let _html = await getSourceCode(_name, _file);
+          let code = hljs.highlightAuto(_html).value;
+          e.innerHTML = code
+      }
+      let all_codes;
+    </script>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1 id="titulo">Ejemplo 2</h1>
+      <div class="menu-nav"><a href="../index.html">Index</a><a href="ejercicios-01.html">Ej-01</a><a class="remark-ej" href="ejercicios-02.html">Ej-02</a><a href="ejercicios-03.html">Ej-03</a><a href="ejercicios-04.html">Ej-04</a>
+      </div><code class="header" style="text-align:center; display:block"><a href="#downer"></a></code><img src="../static/../static/screenshots/s1.png" style="width: 100%"/><img src="../static/../static/diagrams/d1.png" style="width: 100%"/>
+      <hr><code class="header" style="text-align:center; display:block"><a href="#titulo"></a></code>
+      <div class="menu-nav" id="downer"><a href="../index.html">Index</a><a href="ejercicios-01.html">Ej-01</a><a class="remark-ej" href="ejercicios-02.html">Ej-02</a><a href="ejercicios-03.html">Ej-03</a><a href="ejercicios-04.html">Ej-04</a>
+      </div>
+    </div>
+    <script src="../scripts.js"></script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+          });
+      });
+    </script>
+    <script src="../prism/prism.js"></script>
+  </body>
+</html>
